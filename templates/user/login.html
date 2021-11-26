@@ -1,0 +1,37 @@
+{% extends 'user/base.html' %}
+
+{% block main_content %}
+
+<br>
+
+<div class="container col-md-8">
+    <div class="container mt-4">
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <h3>Login</h3>
+            <hr>
+
+
+            <div class="form-group mt-3">
+                <input type="text" class="form-control" name="username" required placeholder="UserName"
+                    id="exampleInputPassword1">
+
+
+                <div class="form-group mt-3">
+
+                    <input type="password" class="form-control" name="pass1" required placeholder="Password"
+                        id="exampleInputPassword1">
+                </div>
+
+
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-outline-dark mr-2">Login</button>
+            Don't have an account? <a href="{% url 'signup'%}">Register</a>
+
+
+        </form>
+    </div>
+</div>
+{% endblock %}
